@@ -1,0 +1,22 @@
+# Jekyll ビルド成果物
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Bundler
+vendor/
+.bundle/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# エディタ
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# 環境変数
+.env
