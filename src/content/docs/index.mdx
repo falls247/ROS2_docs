@@ -1,0 +1,48 @@
+---
+title: ROS 2 実践ドキュメント
+description: ROS 2 Jazzyを基礎から産業用ロボット応用まで学ぶ日本語実践サイト
+template: splash
+hero:
+  tagline: ROS 2 Jazzyの基礎概念、コマンド、プログラミング、シミュレーション、産業用ロボット連携を段階的に学ぶ
+  actions:
+    - text: 学習を始める
+      link: /ROS2_docs/start/roadmap/
+      icon: right-arrow
+      variant: primary
+    - text: GitHubを見る
+      link: https://github.com/falls247/ROS2_docs
+      icon: external
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## このサイトの特徴
+
+<CardGrid>
+  <Card title="概念から理解" icon="open-book">
+    Node、Topic、Service、Action、DDSなどを、通信の流れと役割から整理する。
+  </Card>
+  <Card title="実行して確認" icon="pencil">
+    Ubuntu 24.04とROS 2 Jazzyを基準に、コマンド、期待結果、確認ポイントを記載する。
+  </Card>
+  <Card title="失敗から学ぶ" icon="warning">
+    よくあるエラー、原因の切り分け、確認コマンドを実務的にまとめる。
+  </Card>
+  <Card title="産業用ロボットへ展開" icon="rocket">
+    MoveIt 2、Isaac Sim、cuRobo、FANUC CRXなどへの接続を最終到達点とする。
+  </Card>
+</CardGrid>
+
+## 初期対応範囲
+
+- ROS 2 Jazzy Jalisco
+- Ubuntu 24.04 LTS
+- Python `rclpy` / C++ `rclcpp`
+- colcon、rosdep、rqt、rviz2、rosbag2
+- URDF、TF2、ros2_control、MoveIt 2
+- Gazebo、NVIDIA Isaac Sim
+- 産業用ロボットとSim-to-Real
+
+:::note[進捗]
+現在はサイト基盤と基礎概念ページを公開するMVP段階。各ページの `last_verified` を基準に手順の鮮度を管理する。
+:::

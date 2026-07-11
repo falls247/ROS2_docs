@@ -1,22 +1,25 @@
-# Jekyll ビルド成果物
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
+# dependencies
+node_modules/
 
-# Bundler
-vendor/
-.bundle/
+# Astro build output
+dist/
+.astro/
 
-# OS
-.DS_Store
-Thumbs.db
+# generated search index
+pagefind/
 
-# エディタ
-*.swp
-*.swo
+# environment
+.env
+.env.*
+!.env.example
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# editors and OS
 .vscode/
 .idea/
-
-# 環境変数
-.env
+.DS_Store
+Thumbs.db
