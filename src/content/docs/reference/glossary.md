@@ -1,6 +1,7 @@
 ---
 title: ROS 2 用語集
 description: ROS 2とロボット開発で頻出する用語の短い定義
+last_verified: 2026-07-11
 ---
 
 | 用語 | 定義 |
