@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">ROS 2システム全体像</title>
+  <desc id="desc">センサー、認識、計画、制御、アクチュエータの各NodeがTopic、Action、Serviceで連携する構成図</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0 0 L12 6 L0 12 Z" fill="#475569"/>
+    </marker>
+    <style>
+      .bg{fill:#f8fafc;stroke:#cbd5e1;stroke-width:2}.node{fill:#fff;stroke:#2563eb;stroke-width:3}.aux{fill:#fff;stroke:#7c3aed;stroke-width:3}.title{font:700 30px system-ui,sans-serif;fill:#0f172a}.label{font:700 20px system-ui,sans-serif;fill:#0f172a}.sub{font:500 15px system-ui,sans-serif;fill:#475569}.edge{stroke:#475569;stroke-width:3;fill:none;marker-end:url(#arrow)}.topic{font:700 14px system-ui,sans-serif;fill:#0369a1}.action{font:700 14px system-ui,sans-serif;fill:#c2410c}.service{font:700 14px system-ui,sans-serif;fill:#6d28d9}
+    </style>
+  </defs>
+  <rect x="10" y="10" width="1180" height="500" rx="24" class="bg"/>
+  <text x="48" y="62" class="title">ROS 2システム全体像</text>
+
+  <rect x="55" y="165" width="170" height="105" rx="18" class="node"/>
+  <text x="105" y="207" class="label">Sensor</text><text x="84" y="238" class="sub">センサーNode</text>
+  <rect x="285" y="165" width="170" height="105" rx="18" class="node"/>
+  <text x="322" y="207" class="label">Perception</text><text x="327" y="238" class="sub">認識Node</text>
+  <rect x="515" y="165" width="170" height="105" rx="18" class="node"/>
+  <text x="558" y="207" class="label">Planner</text><text x="559" y="238" class="sub">計画Node</text>
+  <rect x="745" y="165" width="170" height="105" rx="18" class="node"/>
+  <text x="785" y="207" class="label">Controller</text><text x="788" y="238" class="sub">制御Node</text>
+  <rect x="975" y="165" width="170" height="105" rx="18" class="node"/>
+  <text x="1013" y="207" class="label">Actuator</text><text x="1010" y="238" class="sub">ロボット／機器</text>
+
+  <path d="M225 218 H285" class="edge"/><text x="236" y="198" class="topic">Topic</text>
+  <path d="M455 218 H515" class="edge"/><text x="466" y="198" class="topic">Topic</text>
+  <path d="M685 218 H745" class="edge"/><text x="693" y="198" class="action">Action</text>
+  <path d="M915 218 H975" class="edge"/><text x="926" y="198" class="topic">Topic</text>
+
+  <rect x="745" y="350" width="170" height="95" rx="18" class="aux"/>
+  <text x="781" y="391" class="label">Config UI</text><text x="779" y="420" class="sub">設定・状態取得</text>
+  <path d="M830 350 V270" class="edge"/><text x="842" y="315" class="service">Service</text>
+
+  <rect x="975" y="350" width="170" height="95" rx="18" class="aux"/>
+  <text x="1012" y="391" class="label">Monitor</text><text x="1014" y="420" class="sub">監視・記録</text>
+  <path d="M1060 270 V350" class="edge"/><text x="1072" y="315" class="topic">Topic</text>
+
+  <text x="55" y="482" class="sub">Nodeを機能単位に分離し、通信方式を用途に応じて選択することで、変更・再利用・分散実行を容易にする。</text>
+</svg>

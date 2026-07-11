@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">ROS 2通信方式の選択</title>
+  <desc id="desc">Topic、Service、Actionを用途別に比較する図</desc>
+  <style>
+    .bg{fill:#f8fafc;stroke:#cbd5e1;stroke-width:2}.title{font:700 30px system-ui,sans-serif;fill:#0f172a}.head{font:700 24px system-ui,sans-serif}.body{font:500 17px system-ui,sans-serif;fill:#334155}.topic{fill:#ecfeff;stroke:#0891b2;stroke-width:3}.service{fill:#f5f3ff;stroke:#7c3aed;stroke-width:3}.action{fill:#fff7ed;stroke:#ea580c;stroke-width:3}.t1{fill:#0e7490}.t2{fill:#6d28d9}.t3{fill:#c2410c}.badge{font:700 15px system-ui,sans-serif;fill:#fff}
+  </style>
+  <rect x="10" y="10" width="1180" height="480" rx="24" class="bg"/>
+  <text x="48" y="62" class="title">通信方式の選び方</text>
+
+  <rect x="55" y="105" width="330" height="310" rx="22" class="topic"/>
+  <text x="82" y="150" class="head t1">Topic</text>
+  <rect x="82" y="170" width="112" height="30" rx="15" fill="#0891b2"/><text x="101" y="191" class="badge">非同期配信</text>
+  <text x="82" y="240" class="body">• 継続的なデータ</text><text x="82" y="276" class="body">• 1対多／多対多</text><text x="82" y="312" class="body">• 送信側は待たない</text><text x="82" y="360" class="body">例: Camera、Joint State</text>
+
+  <rect x="435" y="105" width="330" height="310" rx="22" class="service"/>
+  <text x="462" y="150" class="head t2">Service</text>
+  <rect x="462" y="170" width="126" height="30" rx="15" fill="#7c3aed"/><text x="480" y="191" class="badge">要求と応答</text>
+  <text x="462" y="240" class="body">• 短時間で完了</text><text x="462" y="276" class="body">• 結果を待つ</text><text x="462" y="312" class="body">• 途中経過は不要</text><text x="462" y="360" class="body">例: 設定変更、状態取得</text>
+
+  <rect x="815" y="105" width="330" height="310" rx="22" class="action"/>
+  <text x="842" y="150" class="head t3">Action</text>
+  <rect x="842" y="170" width="165" height="30" rx="15" fill="#ea580c"/><text x="862" y="191" class="badge">長時間＋進捗</text>
+  <text x="842" y="240" class="body">• 完了まで時間がかかる</text><text x="842" y="276" class="body">• Feedbackが必要</text><text x="842" y="312" class="body">• Cancelが必要</text><text x="842" y="360" class="body">例: 軌道実行、移動指示</text>
+
+  <text x="55" y="455" class="body">判断軸: データを配り続ける → Topic ／ すぐ答える → Service ／ 進捗を見ながら待つ → Action</text>
+</svg>

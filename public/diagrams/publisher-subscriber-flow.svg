@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="440" viewBox="0 0 1200 440" role="img" aria-labelledby="title desc">
+  <title id="title">PublisherとSubscriberのTopic通信</title>
+  <desc id="desc">PublisherがTopicへ送信し、複数Subscriberが受信する非同期通信図</desc>
+  <defs><marker id="a" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12 Z" fill="#475569"/></marker></defs>
+  <style>.bg{fill:#f8fafc;stroke:#cbd5e1;stroke-width:2}.box{fill:#fff;stroke:#2563eb;stroke-width:3}.bus{fill:#ecfeff;stroke:#0891b2;stroke-width:3}.title{font:700 30px system-ui,sans-serif;fill:#0f172a}.label{font:700 21px system-ui,sans-serif;fill:#0f172a}.sub{font:500 16px system-ui,sans-serif;fill:#475569}.edge{stroke:#475569;stroke-width:3;fill:none;marker-end:url(#a)}.qos{fill:#e0f2fe;stroke:#0284c7;stroke-width:2}</style>
+  <rect x="10" y="10" width="1180" height="420" rx="24" class="bg"/><text x="48" y="62" class="title">Topic通信: Publisher → Topic → Subscriber</text>
+  <rect x="60" y="150" width="220" height="120" rx="20" class="box"/><text x="101" y="198" class="label">Publisher Node</text><text x="98" y="230" class="sub">メッセージを送信</text>
+  <rect x="420" y="120" width="260" height="180" rx="28" class="bus"/><text x="513" y="180" class="label">Topic</text><text x="493" y="215" class="sub">/camera/image</text><rect x="477" y="240" width="146" height="34" rx="17" class="qos"/><text x="510" y="263" class="sub">QoS policy</text>
+  <rect x="840" y="80" width="260" height="105" rx="20" class="box"/><text x="881" y="123" class="label">Subscriber A</text><text x="880" y="153" class="sub">認識処理</text>
+  <rect x="840" y="245" width="260" height="105" rx="20" class="box"/><text x="881" y="288" class="label">Subscriber B</text><text x="880" y="318" class="sub">記録・監視</text>
+  <path d="M280 210 H420" class="edge"/><path d="M680 185 C760 185 760 132 840 132" class="edge"/><path d="M680 235 C760 235 760 298 840 298" class="edge"/>
+  <text x="315" y="188" class="sub">publish</text><text x="722" y="163" class="sub">subscribe</text><text x="720" y="279" class="sub">subscribe</text><text x="60" y="392" class="sub">PublisherはSubscriberの処理完了を待たない。Subscriber数を増やしてもPublisher側の実装を変えずに拡張できる。</text>
+</svg>

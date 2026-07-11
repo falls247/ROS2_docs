@@ -5,11 +5,18 @@ description: PublisherとSubscriberによる非同期データ配信
 
 TopicはPublisherからSubscriberへ継続的にデータを配信する非同期通信方式。
 
+## 通信構造
+
+![PublisherがTopicへ送信し、複数Subscriberが受信する構成図](/ROS2_docs/diagrams/publisher-subscriber-flow.svg)
+
+*Publisherは受信側の処理完了を待たず、同じTopicを複数Subscriberが購読できる。*
+
 ## 特徴
 
 - PublisherはSubscriberの処理完了を待たない
 - 1対1、1対多、多対多の構成が可能
 - QoSで信頼性、履歴、キュー深度などを調整する
+- 送信側と受信側を疎結合に保てる
 
 ## 動作確認
 

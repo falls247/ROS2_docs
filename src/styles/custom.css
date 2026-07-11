@@ -1,5 +1,5 @@
 :root {
-  --sl-content-width: 52rem;
+  --sl-content-width: 58rem;
   --sl-text-5xl: 3rem;
 }
 
@@ -13,4 +13,23 @@
 
 .sl-markdown-content code {
   word-break: normal;
+}
+
+.sl-markdown-content img[src*="/diagrams/"] {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-block: 1.5rem 0.65rem;
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 1rem;
+  background: #f8fafc;
+  box-shadow: 0 0.7rem 1.8rem rgb(15 23 42 / 10%);
+}
+
+.sl-markdown-content img[src*="/diagrams/"] + em {
+  display: block;
+  margin-bottom: 1.75rem;
+  color: var(--sl-color-gray-2);
+  font-size: 0.9rem;
+  text-align: center;
 }

@@ -5,6 +5,12 @@ description: ROS 2の同期的なRequest/Response通信
 
 ServiceはClientがRequestを送り、ServerがResponseを返す通信方式。短時間で完了する処理に向く。
 
+## 通信構造
+
+![ClientがServerへRequestを送り、Responseを受け取る構成図](/ROS2_docs/diagrams/service-request-response.svg)
+
+*ClientはResponseを待つため、処理時間が短く、途中経過やキャンセルが不要な用途に適する。*
+
 ## 適する処理
 
 - 現在状態の取得
