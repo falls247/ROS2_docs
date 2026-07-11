@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">ROS 2 WorkspaceとUnderlay・Overlay</title>
+  <desc id="desc">ROS 2 JazzyのUnderlay上に自作WorkspaceのOverlayを重ねる構成図</desc>
+  <defs><marker id="a" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12 Z" fill="#475569"/></marker></defs>
+  <style>.bg{fill:#f8fafc;stroke:#cbd5e1;stroke-width:2}.title{font:700 30px system-ui,sans-serif;fill:#0f172a}.label{font:700 21px system-ui,sans-serif;fill:#0f172a}.sub{font:500 16px system-ui,sans-serif;fill:#475569}.under{fill:#eef2ff;stroke:#4f46e5;stroke-width:3}.over{fill:#ecfeff;stroke:#0891b2;stroke-width:3}.folder{fill:#fff;stroke:#64748b;stroke-width:2}.edge{stroke:#475569;stroke-width:3;fill:none;marker-end:url(#a)}.cmd{font:600 15px ui-monospace,monospace;fill:#0f172a}</style>
+  <rect x="10" y="10" width="1180" height="540" rx="24" class="bg"/><text x="48" y="62" class="title">Workspace / Underlay / Overlay</text>
+
+  <rect x="85" y="360" width="1030" height="120" rx="24" class="under"/>
+  <text x="125" y="405" class="label">Underlay</text><text x="125" y="440" class="cmd">/opt/ros/jazzy</text><text x="475" y="420" class="sub">ROS 2本体、標準パッケージ、共有ライブラリ</text>
+
+  <rect x="85" y="105" width="1030" height="200" rx="24" class="over"/>
+  <text x="125" y="148" class="label">Overlay: ~/ros2_ws</text>
+  <rect x="125" y="180" width="190" height="85" rx="16" class="folder"/><text x="200" y="214" class="label">src</text><text x="157" y="244" class="sub">自作パッケージ</text>
+  <rect x="385" y="180" width="190" height="85" rx="16" class="folder"/><text x="440" y="214" class="label">build</text><text x="419" y="244" class="sub">中間生成物</text>
+  <rect x="645" y="180" width="190" height="85" rx="16" class="folder"/><text x="692" y="214" class="label">install</text><text x="678" y="244" class="sub">実行環境</text>
+  <rect x="905" y="180" width="160" height="85" rx="16" class="folder"/><text x="958" y="214" class="label">log</text><text x="941" y="244" class="sub">ビルドログ</text>
+  <path d="M315 222 H385" class="edge"/><path d="M575 222 H645" class="edge"/><path d="M835 222 H905" class="edge"/>
+
+  <path d="M600 360 V305" class="edge"/><text x="620" y="338" class="cmd">source /opt/ros/jazzy/setup.bash</text>
+  <text x="125" y="520" class="cmd">source ~/ros2_ws/install/setup.bash</text><text x="520" y="520" class="sub">→ Underlayに自作パッケージを重ねたShell環境</text>
+</svg>
