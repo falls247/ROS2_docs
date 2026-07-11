@@ -1,6 +1,7 @@
 ---
 title: Ubuntu 24.04へROS 2 Jazzyを導入
 description: ROS 2 Jazzyの導入前提とインストール後の確認項目
+last_verified: 2026-07-11
 ---
 
 :::caution
