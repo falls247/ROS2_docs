@@ -13,6 +13,10 @@ ros2_ws/
 └── log/      # ビルドログ
 ```
 
+![ROS 2 JazzyのUnderlay上に自作WorkspaceのOverlayを重ねる構成図](/ROS2_docs/diagrams/workspace-overlay.svg)
+
+*ROS 2本体をUnderlayとして読み込み、その上へ自作パッケージのinstall環境をOverlayとして重ねる。*
+
 ## 最小手順
 
 ```bash
@@ -22,6 +26,12 @@ source /opt/ros/jazzy/setup.bash
 colcon build --symlink-install
 source install/setup.bash
 ```
+
+処理順序：
+
+1. Underlayの`setup.bash`を読み込む
+2. `src`内のパッケージを`colcon build`する
+3. 生成されたOverlayの`install/setup.bash`を読み込む
 
 ## UnderlayとOverlay
 
