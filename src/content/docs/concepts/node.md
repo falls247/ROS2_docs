@@ -1,6 +1,7 @@
 ---
 title: Node（ノード）
 description: ROS 2における処理単位Nodeの役割と確認方法
+last_verified: 2026-07-11
 ---
 
 NodeはROS 2システム内の独立した処理単位。センサー入力、認識、計画、制御などを役割ごとに分割する。
