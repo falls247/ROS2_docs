@@ -14,16 +14,9 @@ Actionは長時間処理を扱うための通信方式。Goal、Feedback、Resul
 
 ## 構造
 
-```mermaid
-sequenceDiagram
-  participant C as Action Client
-  participant S as Action Server
-  C->>S: Goal
-  S-->>C: Feedback
-  S-->>C: Feedback
-  C-->>S: Cancel（任意）
-  S-->>C: Result
-```
+![Action ClientとAction Server間のGoal、Feedback、Cancel、Resultの流れ](/ROS2_docs/diagrams/action-lifecycle.svg)
+
+*ClientがGoalを送り、Serverは処理中にFeedbackを返す。必要ならCancelでき、終了時にResultを受け取る。*
 
 ## Serviceとの違い
 
