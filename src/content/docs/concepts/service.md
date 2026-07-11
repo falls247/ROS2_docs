@@ -1,6 +1,7 @@
 ---
 title: Service（サービス）
 description: ROS 2の同期的なRequest/Response通信
+last_verified: 2026-07-11
 ---
 
 ServiceはClientがRequestを送り、ServerがResponseを返す通信方式。短時間で完了する処理に向く。

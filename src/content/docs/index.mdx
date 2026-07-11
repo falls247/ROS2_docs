@@ -1,6 +1,7 @@
 ---
 title: ROS 2 実践ドキュメント
 description: ROS 2 Jazzyを基礎から産業用ロボット応用まで学ぶ日本語実践サイト
+last_verified: 2026-07-11
 template: splash
 hero:
   tagline: ROS 2 Jazzyの基礎概念、コマンド、プログラミング、シミュレーション、産業用ロボット連携を段階的に学ぶ
@@ -43,6 +44,6 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 - Gazebo、NVIDIA Isaac Sim
 - 産業用ロボットとSim-to-Real
 
-:::note[進捗]
-現在はサイト基盤と基礎概念ページを公開するMVP段階。各ページの `last_verified` を基準に手順の鮮度を管理する。
+:::note[検証日の管理]
+各ページのfrontmatterで `last_verified` を必須化し、通常ページのタイトル直下に最終検証日を表示する。手順や対象環境を確認・変更した場合は、同じPull Requestで検証日も更新する。
 :::

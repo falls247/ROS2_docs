@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="520" viewBox="0 0 1120 520" role="img" aria-labelledby="title desc">
+  <title id="title">ROS 2学習ロードマップ</title>
+  <desc id="desc">基礎概念から環境構築、CLI、通信プログラミング、可視化、ロボットモデル、シミュレーション、産業用ロボットへ進む8段階の学習順序</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#475569"/>
+    </marker>
+    <style>
+      .bg{fill:#fff;stroke:#cbd5e1;stroke-width:2}.box{stroke-width:2;rx:16}.b1{fill:#eff6ff;stroke:#2563eb}.b2{fill:#ecfeff;stroke:#0891b2}.b3{fill:#f0fdf4;stroke:#16a34a}.b4{fill:#fefce8;stroke:#ca8a04}.b5{fill:#fff7ed;stroke:#ea580c}.b6{fill:#fdf4ff;stroke:#c026d3}.b7{fill:#f5f3ff;stroke:#7c3aed}.b8{fill:#fff1f2;stroke:#e11d48}.title{font:700 28px system-ui,sans-serif;fill:#0f172a}.step{font:700 17px system-ui,sans-serif;fill:#0f172a}.sub{font:14px system-ui,sans-serif;fill:#334155}.arrow{stroke:#475569;stroke-width:3;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect x="10" y="10" width="1100" height="500" rx="24" class="bg"/>
+  <text x="50" y="58" class="title">ROS 2 学習ロードマップ</text>
+
+  <rect x="50" y="100" width="220" height="105" class="box b1"/>
+  <text x="75" y="135" class="step">1. 基礎概念</text>
+  <text x="75" y="163" class="sub">Node / Topic / Service</text>
+  <text x="75" y="184" class="sub">Action / Parameter / DDS</text>
+
+  <rect x="320" y="100" width="220" height="105" class="box b2"/>
+  <text x="345" y="135" class="step">2. 環境構築</text>
+  <text x="345" y="163" class="sub">Ubuntu 24.04</text>
+  <text x="345" y="184" class="sub">ROS 2 Jazzy</text>
+
+  <rect x="590" y="100" width="220" height="105" class="box b3"/>
+  <text x="615" y="135" class="step">3. CLIとWorkspace</text>
+  <text x="615" y="163" class="sub">ros2 CLI / colcon</text>
+  <text x="615" y="184" class="sub">Underlay / Overlay</text>
+
+  <rect x="860" y="100" width="210" height="105" class="box b4"/>
+  <text x="885" y="135" class="step">4. 通信実装</text>
+  <text x="885" y="163" class="sub">rclpy / rclcpp</text>
+  <text x="885" y="184" class="sub">Interface設計</text>
+
+  <path d="M270 152 H315" class="arrow"/>
+  <path d="M540 152 H585" class="arrow"/>
+  <path d="M810 152 H855" class="arrow"/>
+  <path d="M965 205 V255 H965" class="arrow"/>
+
+  <rect x="860" y="285" width="210" height="105" class="box b5"/>
+  <text x="885" y="320" class="step">5. 可視化・診断</text>
+  <text x="885" y="348" class="sub">rqt / rviz2 / rosbag2</text>
+  <text x="885" y="369" class="sub">Topic・TFの観察</text>
+
+  <rect x="590" y="285" width="220" height="105" class="box b6"/>
+  <text x="615" y="320" class="step">6. ロボットモデル</text>
+  <text x="615" y="348" class="sub">URDF / TF2</text>
+  <text x="615" y="369" class="sub">ros2_control</text>
+
+  <rect x="320" y="285" width="220" height="105" class="box b7"/>
+  <text x="345" y="320" class="step">7. 計画・Sim</text>
+  <text x="345" y="348" class="sub">MoveIt 2 / Gazebo</text>
+  <text x="345" y="369" class="sub">Isaac Sim / cuRobo</text>
+
+  <rect x="50" y="285" width="220" height="105" class="box b8"/>
+  <text x="75" y="320" class="step">8. 産業用ロボット</text>
+  <text x="75" y="348" class="sub">FANUC / 実機接続</text>
+  <text x="75" y="369" class="sub">安全 / Sim-to-Real</text>
+
+  <path d="M855 337 H815" class="arrow"/>
+  <path d="M585 337 H545" class="arrow"/>
+  <path d="M315 337 H275" class="arrow"/>
+
+  <text x="50" y="455" class="sub">各段階で「概念を説明できる → CLIで観察できる → 最小構成を実行できる」を確認してから次へ進む。</text>
+</svg>

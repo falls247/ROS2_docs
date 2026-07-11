@@ -1,6 +1,7 @@
 ---
 title: Topic（トピック）
 description: PublisherとSubscriberによる非同期データ配信
+last_verified: 2026-07-11
 ---
 
 TopicはPublisherからSubscriberへ継続的にデータを配信する非同期通信方式。

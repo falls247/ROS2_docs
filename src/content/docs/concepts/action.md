@@ -1,6 +1,7 @@
 ---
 title: Action（アクション）
 description: 長時間処理、進捗、キャンセルを扱うROS 2通信方式
+last_verified: 2026-07-11
 ---
 
 Actionは長時間処理を扱うための通信方式。Goal、Feedback、Resultで構成され、実行中キャンセルにも対応する。

@@ -3,7 +3,7 @@
 ## 開発環境
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
@@ -12,6 +12,8 @@ npm run dev
 ```bash
 npm run build
 ```
+
+依存関係を追加・更新した場合は`package-lock.json`もコミットする。通常のCI・レビュー確認では`npm ci`を使用する。
 
 ## ブランチ
 
@@ -35,6 +37,19 @@ npm run build
 7. よくあるエラー
 8. 次に読むページ
 9. 参考資料
+
+## 検証日の更新
+
+全ページのfrontmatterに次を記載する。
+
+```yaml
+last_verified: 2026-07-11
+```
+
+- 形式は`YYYY-MM-DD`
+- コマンド、対象OS、ROS 2ディストリビューション、外部リンクを確認した日を記録
+- 誤字修正だけの場合は更新不要
+- 手順や前提環境を変更した場合は同じPull Requestで更新
 
 ## 表記
 

@@ -15,11 +15,13 @@ ROS 2 Jazzyを基礎概念から産業用ロボット・シミュレーション
 前提：Node.js 24
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
 `http://localhost:4321/ROS2_docs/`を開く。
+
+依存関係を変更する場合のみ`npm install <package>`を使用し、更新された`package-lock.json`を同じPull Requestへ含める。
 
 ## ビルド
 
@@ -42,11 +44,13 @@ src/content/docs/
 └── reference/
 ```
 
+各ページのfrontmatterには`last_verified`が必須。手順、対象OS、ROS 2ディストリビューションを確認した日を`YYYY-MM-DD`形式で記録する。
+
 ## 公開
 
 `main`へのPushで`.github/workflows/deploy.yml`が実行され、GitHub Pagesへ公開される。
 
-公開予定URL：`https://falls247.github.io/ROS2_docs/`
+公開URL：`https://falls247.github.io/ROS2_docs/`
 
 初回のみGitHubリポジトリの **Settings → Pages → Source** を **GitHub Actions** に設定する。
 
