@@ -1,0 +1,31 @@
+name: 新規ページ
+description: 新しい解説・チュートリアルを追加する
+title: "[Docs]: "
+labels: []
+body:
+  - type: input
+    id: page-title
+    attributes:
+      label: ページテーマ
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: 読者が達成できること
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: 対象環境
+      placeholder: Ubuntu 24.04 / ROS 2 Jazzy
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 完了条件
+      value: |
+        - [ ] 概念説明
+        - [ ] 実行手順
+        - [ ] 期待結果
+        - [ ] よくあるエラー

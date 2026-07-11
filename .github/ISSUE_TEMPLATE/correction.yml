@@ -1,0 +1,21 @@
+name: 誤記・内容修正
+description: 誤記、古い手順、リンク切れを報告する
+title: "[Fix]: "
+labels: []
+body:
+  - type: input
+    id: page
+    attributes:
+      label: 対象ページ
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: 問題内容
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期待する修正

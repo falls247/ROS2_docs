@@ -1,0 +1,16 @@
+:root {
+  --sl-content-width: 52rem;
+  --sl-text-5xl: 3rem;
+}
+
+.hero .tagline {
+  max-width: 48rem;
+}
+
+.sl-markdown-content table {
+  font-size: 0.95rem;
+}
+
+.sl-markdown-content code {
+  word-break: normal;
+}

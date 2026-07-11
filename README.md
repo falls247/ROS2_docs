@@ -1,162 +1,61 @@
-# ROS2 Jazzy チームドキュメント
+# ROS 2 実践ドキュメント
 
-ROS2 Jazzy Jalisco（LTS）を対象としたチーム共有の内部リファレンスサイト。
-用語検索機能付きで、概念・CLIコマンド・用語集・サンプルコードを素早く参照できる。
+ROS 2 Jazzyを基礎概念から産業用ロボット・シミュレーション活用まで段階的に学ぶ日本語ドキュメントサイト。
 
-## 機能
+## 技術構成
 
-- **用語検索**: クライアントサイドJavaScript（simple-jekyll-search）による全文検索
-- **カテゴリ別ドキュメント**: 概念 / CLIリファレンス / 用語集 / サンプルコード
-- **GitHub Pages対応**: 追加サーバー不要でデプロイ可能
-- **対象バージョン**: ROS2 Jazzy Jalisco（2024〜2029年LTSサポート）
+- Astro 7
+- Starlight
+- Markdown / MDX
+- GitHub Actions
+- GitHub Pages
 
-## フォルダ構成
+## ローカル開発
 
-```
-ROS2_docs/
-├── _config.yml          # Jekyll設定（サイト名・URL・プラグイン等）
-├── _layouts/            # HTMLレイアウトテンプレート
-│   ├── default.html
-│   └── doc.html
-├── _includes/           # 共通パーツ
-│   ├── header.html
-│   ├── sidebar.html
-│   └── search.html      # 検索UIコンポーネント
-├── _docs/               # ドキュメント本体（Markdown）
-│   ├── concepts/        # 概念説明（Node, Topic, Service, Action, TF2等）
-│   ├── commands/        # CLIリファレンス（ros2 node, ros2 topic等）
-│   ├── glossary/        # 用語集
-│   └── examples/        # サンプルコード
-├── assets/
-│   ├── css/
-│   │   └── style.css
-│   └── js/
-│       └── search.js    # simple-jekyll-searchの設定
-├── search.json          # 検索インデックス（Jekyllが自動生成）
-├── index.md             # トップページ
-├── Gemfile              # Ruby依存関係
-└── README.md            # このファイル
-```
-
-## セットアップ
-
-### 前提条件
-
-- Ruby 3.1以上
-- Bundler 2.x（`gem install bundler`）
-
-### ローカル起動
+前提：Node.js 24
 
 ```bash
-# 依存関係のインストール
-bundle install
-
-# 開発サーバー起動
-bundle exec jekyll serve
-
-# ブラウザで確認
-# http://localhost:4000
+npm install
+npm run dev
 ```
 
-ファイルを変更すると自動でリビルドされる（`--livereload` オプションで自動リロードも可能）。
+`http://localhost:4321/ROS2_docs/`を開く。
+
+## ビルド
 
 ```bash
-bundle exec jekyll serve --livereload
+npm run build
+npm run preview
 ```
 
-## ドキュメントの追加方法
+## コンテンツ
 
-### ファイルの作成
+ドキュメントは`src/content/docs/`配下へ配置する。
 
-`_docs/` 配下の適切なカテゴリフォルダに `.md` ファイルを追加する。
-
-```
-_docs/concepts/node.md
-_docs/commands/ros2-topic.md
-_docs/glossary/qos.md
-```
-
-### Front Matter
-
-各ドキュメントの先頭に以下のFront Matterを記載する。
-
-```yaml
----
-title: "Node（ノード）"
-category: concepts
-tags: [node, ros2-basics, jazzy]
-description: "ROS2における計算の基本単位。Publisher/Subscriberとして機能する。"
-order: 1
----
+```text
+src/content/docs/
+├── index.mdx
+├── start/
+├── concepts/
+├── installation/
+├── workspace/
+└── reference/
 ```
 
-| フィールド | 説明 |
-|---|---|
-| `title` | ページタイトル（検索対象） |
-| `category` | `concepts` / `commands` / `glossary` / `examples` |
-| `tags` | 検索タグ（配列） |
-| `description` | 検索結果に表示される説明文 |
-| `order` | サイドバー内の表示順 |
+## 公開
 
-### 検索インデックスへの反映
+`main`へのPushで`.github/workflows/deploy.yml`が実行され、GitHub Pagesへ公開される。
 
-Front Matterの `title`・`tags`・`description` が `search.json` に自動的に含まれ、
-サイトビルド時に検索インデックスとして生成される。追加作業は不要。
+公開予定URL：`https://falls247.github.io/ROS2_docs/`
 
-## GitHub Pagesへのデプロイ
+初回のみGitHubリポジトリの **Settings → Pages → Source** を **GitHub Actions** に設定する。
 
-### 初回設定
+## 方針
 
-1. `_config.yml` の `baseurl` をリポジトリ名に設定する（個人リポジトリ直下の場合は空白）
+- 基準環境：Ubuntu 24.04 / ROS 2 Jazzy
+- 1ページ1テーマ
+- 概念、手順、期待結果、失敗例をセットで記載
+- 公式ドキュメントの転載ではなく、実践的な独自解説を作成
+- 将来はMoveIt 2、Isaac Sim、cuRobo、FANUC CRXへ拡張
 
-```yaml
-baseurl: "/ROS2_docs"   # リポジトリ名
-url: "https://<organization>.github.io"
-```
-
-2. GitHubリポジトリの Settings > Pages > Source を `main` ブランチの `/docs` フォルダまたは `gh-pages` ブランチに設定する。
-
-### デプロイフロー（GitHub Actions推奨）
-
-`.github/workflows/deploy.yml` を用意してプッシュ時に自動ビルド・デプロイする構成を推奨。
-詳細は `dev/docs/deploy.md` を参照（作成予定）。
-
-## 貢献ガイドライン
-
-### ブランチ運用
-
-```
-main        # 本番（GitHub Pagesにデプロイされる）
-dev         # 開発統合ブランチ
-feat/xxx    # 新規ドキュメント追加
-fix/xxx     # 誤記・修正
-```
-
-`main` への直接プッシュ禁止。必ず `dev` または topicブランチ経由でPRを作成すること。
-
-### コミットメッセージ規則
-
-```
-yyyyMMdd_{prefix}_{作業内容（英語30文字以内）}
-```
-
-| prefix | 用途 |
-|---|---|
-| `feat` | 新規ドキュメント追加 |
-| `fix` | 誤記・リンク修正 |
-| `docs` | README・ガイドラインの更新 |
-| `refactor` | 構成変更・リネーム |
-| `chore` | Jekyll設定・依存関係更新 |
-
-例:
-```
-20260711_feat_add-ros2-topic-command-reference
-20260711_fix_correct-qos-policy-description
-```
-
-### プルリクエスト
-
-1. topicブランチで作業・コミット
-2. `dev` ブランチへPRを作成
-3. レビュー後マージ
-4. リリースタイミングで `dev` → `main` へマージ（GitHub Pagesに反映）
+詳細は[CONTRIBUTING.md](./CONTRIBUTING.md)を参照。
