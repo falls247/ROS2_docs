@@ -28,6 +28,9 @@ export default defineConfig({
       },
       lastUpdated: true,
       customCss: ['./src/styles/custom.css'],
+      components: {
+        PageTitle: './src/components/PageTitle.astro',
+      },
       sidebar: [
         { label: 'ホーム', slug: 'index' },
         {
