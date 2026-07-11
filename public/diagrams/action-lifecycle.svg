@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="540" viewBox="0 0 1200 540" role="img" aria-labelledby="title desc">
+  <title id="title">ActionのGoal、Feedback、Cancel、Result</title>
+  <desc id="desc">Action ClientとAction Server間の長時間処理シーケンス図</desc>
+  <defs><marker id="a" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12 Z" fill="#475569"/></marker></defs>
+  <style>.bg{fill:#f8fafc;stroke:#cbd5e1;stroke-width:2}.box{fill:#fff;stroke:#ea580c;stroke-width:3}.title{font:700 30px system-ui,sans-serif;fill:#0f172a}.label{font:700 21px system-ui,sans-serif;fill:#0f172a}.sub{font:500 16px system-ui,sans-serif;fill:#475569}.life{stroke:#94a3b8;stroke-width:3;stroke-dasharray:8 8}.edge{stroke:#475569;stroke-width:3;fill:none;marker-end:url(#a)}.goal{fill:#2563eb}.feedback{fill:#0891b2}.cancel{fill:#dc2626}.result{fill:#16a34a}.tag{font:700 15px system-ui,sans-serif;fill:#fff}</style>
+  <rect x="10" y="10" width="1180" height="520" rx="24" class="bg"/><text x="48" y="62" class="title">Action通信のライフサイクル</text>
+  <rect x="100" y="95" width="250" height="70" rx="18" class="box"/><text x="151" y="138" class="label">Action Client</text>
+  <rect x="850" y="95" width="250" height="70" rx="18" class="box"/><text x="900" y="138" class="label">Action Server</text>
+  <line x1="225" y1="165" x2="225" y2="480" class="life"/><line x1="975" y1="165" x2="975" y2="480" class="life"/>
+
+  <path d="M225 210 H975" class="edge"/><rect x="525" y="183" width="150" height="36" rx="18" class="goal"/><text x="575" y="207" class="tag">Goal</text>
+  <path d="M975 280 H225" class="edge"/><rect x="510" y="253" width="180" height="36" rx="18" class="feedback"/><text x="555" y="277" class="tag">Feedback</text>
+  <path d="M975 340 H225" class="edge"/><rect x="510" y="313" width="180" height="36" rx="18" class="feedback"/><text x="555" y="337" class="tag">Feedback</text>
+  <path d="M225 395 H975" class="edge" stroke-dasharray="9 7"/><rect x="500" y="368" width="200" height="36" rx="18" class="cancel"/><text x="536" y="392" class="tag">Cancel（任意）</text>
+  <path d="M975 455 H225" class="edge"/><rect x="520" y="428" width="160" height="36" rx="18" class="result"/><text x="568" y="452" class="tag">Result</text>
+
+  <text x="100" y="505" class="sub">長時間処理でも途中経過を受け取り、必要ならキャンセルできる。軌道実行やナビゲーションに適する。</text>
+</svg>
