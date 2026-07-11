@@ -1,6 +1,7 @@
 ---
 title: Workspaceとcolcon
 description: ROS 2ワークスペース、Underlay、Overlay、colcon buildの基本
+last_verified: 2026-07-11
 ---
 
 ## Workspace構成
