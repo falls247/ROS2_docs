@@ -1,0 +1,54 @@
+---
+const { title, last_verified: rawLastVerified } = Astro.locals.starlightRoute.entry.data;
+
+const isoDate = rawLastVerified
+  ? rawLastVerified instanceof Date
+    ? rawLastVerified.toISOString().slice(0, 10)
+    : String(rawLastVerified).slice(0, 10)
+  : undefined;
+
+const formattedDate = isoDate
+  ? new Intl.DateTimeFormat('ja-JP', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      timeZone: 'UTC',
+    }).format(new Date(`${isoDate}T00:00:00Z`))
+  : undefined;
+---
+
+<h1 id="_top">{title}</h1>
+{
+  isoDate && formattedDate && (
+    <p class="verification-date">
+      <span aria-hidden="true">✓</span>
+      最終検証日：<time datetime={isoDate}>{formattedDate}</time>
+    </p>
+  )
+}
+
+<style>
+  @layer starlight.core {
+    h1 {
+      margin-top: 1rem;
+      font-size: var(--sl-text-h1);
+      line-height: var(--sl-line-height-headings);
+      font-weight: 600;
+      color: var(--sl-color-white);
+    }
+
+    .verification-date {
+      display: flex;
+      gap: 0.4rem;
+      align-items: center;
+      margin-top: 0.75rem;
+      color: var(--sl-color-gray-3);
+      font-size: var(--sl-text-sm);
+    }
+
+    .verification-date span {
+      color: var(--sl-color-green-high);
+      font-weight: 700;
+    }
+  }
+</style>
