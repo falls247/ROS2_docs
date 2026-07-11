@@ -1,22 +1,16 @@
 ---
 title: ROS 2 学習ロードマップ
 description: ROS 2初心者から産業用ロボット応用までの推奨学習順序
+last_verified: 2026-07-11
 sidebar:
   order: 2
 ---
 
 ## 全体像
 
-```mermaid
-flowchart LR
-  A[基礎概念] --> B[環境構築]
-  B --> C[CLIとWorkspace]
-  C --> D[通信プログラミング]
-  D --> E[可視化とデバッグ]
-  E --> F[URDF・TF2・ros2_control]
-  F --> G[MoveIt 2・シミュレーション]
-  G --> H[産業用ロボット・Sim-to-Real]
-```
+![基礎概念から産業用ロボット応用までの8段階のROS 2学習ロードマップ](/ROS2_docs/diagrams/learning-roadmap.svg)
+
+*各段階で、概念理解、CLIによる観察、最小構成の実行確認を積み重ねる。*
 
 ## フェーズ1：通信モデルを理解する
 
